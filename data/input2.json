@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Abner Cuffin",
+        "department": "Business Development",
+        "salary": 3196
+    },
+    {
+        "id": 2,
+        "name": "Maridel Benitez",
+        "department": "Legal",
+        "salary": 3493
+    }
+]

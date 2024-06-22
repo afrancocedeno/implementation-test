@@ -14,6 +14,8 @@ public:
     Employee(std::string n, int i, std::string d, double s);
 };
 
+std::vector<Employee> parseXML(const std::string& filename);
+std::vector<Employee> parseJSON(const std::string& filename);
 double calculateAverageSalary(const std::vector<Employee>& employees);
 Employee findHighestPaidEmployee(const std::vector<Employee>& employees);
 std::vector<Employee> sortEmployeesById(std::vector<Employee>& employees);
