@@ -6,6 +6,7 @@
 #include <libxml/tree.h>
 #include "nlohmann/json.hpp"
 
+
 using json = nlohmann::json;
 
 struct Employee {
@@ -23,12 +24,12 @@ std::vector<Employee> parseJSON(const std::string &filename) {
     file >> j;
 
     if (j.contains("employees")) {
-        for (const auto &item : j["employees"]) {
+        for (const auto &employee : j["employees"]) {
             employees.push_back({
-                item["name"].get<std::string>(),
-                item["id"].get<int>(),
-                item["department"].get<std::string>(),
-                item["salary"].get<double>()
+                employee["name"].get<std::string>(),
+                employee["id"].get<int>(),
+                employee["department"].get<std::string>(),
+                employee["salary"].get<double>()
             });
         }
     } else {
