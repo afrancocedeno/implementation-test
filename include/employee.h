@@ -12,19 +12,29 @@ using json = nlohmann::json;
 
 class Employee {
 public:
-    Employee(const std::string& name, int id, const std::string& department, double salary)
-        : name(name), id(id), department(department), salary(salary) {}
-
-    std::string getName() const { return name; }
-    int getId() const { return id; }
-    std::string getDepartment() const { return department; }
-    double getSalary() const { return salary; }
-
-private:
     std::string name;
     int id;
     std::string department;
     double salary;
+
+    // Default constructor
+    Employee() : name(""), id(0), department(""), salary(0.0) {}
+
+    // Parameterized constructor
+    Employee(const std::string &name, int id, const std::string &department, double salary)
+        : name(name), id(id), department(department), salary(salary) {}
+
+    // Setters
+    void setName(const std::string &name) { this->name = name; }
+    void setId(int id) { this->id = id; }
+    void setDepartment(const std::string &department) { this->department = department; }
+    void setSalary(double salary) { this->salary = salary; }
+
+    // Getters
+    std::string getName() const { return name; }
+    int getId() const { return id; }
+    std::string getDepartment() const { return department; }
+    double getSalary() const { return salary; }
 };
 
 std::vector<Employee> parseJSON(const std::string &filename);

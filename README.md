@@ -26,8 +26,7 @@ g++ -o employee_utility src/*.cpp -I include
 
 # Testing
 ```bash
-g++ -o test_runner tests/*.cpp -I include
-./test_runner
+./scripts/run_tests
 ```
 # Folder Arch
 implementation-test/

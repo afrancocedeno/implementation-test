@@ -1,2 +1,3 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<dataset><record></record></dataset>
+<dataset>
+<record></record><record><id>7</id><name>Travus Covotti</name><department>Sales</department><salary>2651</salary></record><record><id>8</id><name>Philip Draco</name><department>Business Development</department><salary>3348</salary></record><record><id>9</id><name>Gustaf Trussman</name><department>Human Resources</department><salary>4509</salary></record><record><id>10</id><name>Marijo Brastead</name><department>Sales</department><salary>3848</salary></record></dataset>
