@@ -2,9 +2,12 @@
 Alejandro Franco Cedeño 
 Job application: R19775 Software Development Engineer
 
-# Demo 🍿
+## Demo 🍿
 > View [DEMO](https://app.screencast.com/HeCXsnw3Ifnwc)  
 #
+
+## Description
+this is the command line utility capable to process XML and JSON data formats, related to performs data extraction operations to employee datasets. Written in C++, using libraries like `libxml2-dev` and `nlohmann-json3-dev`, also, Unix shell scripts included for automation. Please note, binary files are not loaded to the repository according to `.gitignore`, and all object files `*.o` are ignored and removed during compilation step.
 
 ## Installation
 ```bash
@@ -24,18 +27,18 @@ cd implementation-test
 chmod +x scripts/*.sh
 ```
 
-# Running
+## Running
 ```bash
 ./scripts/run.sh data/input.xml # input data goes inside /data folder
 ./scripts/run.sh data/input.json
 ```
 
-# Testing
+## Testing
 ```bash
 ./scripts/run_tests.sh
 ```
 
-# Folder Arch
+## Folder Arch
 ```bash
 implementation-test/
 ├── README.md
@@ -68,7 +71,7 @@ implementation-test/
     └── test_cases.cpp
 ```
 
-# Reference
+## Reference
 - https://en.cppreference.com/
 - reference manual: `man gcc`
 - reference manual: `man tree`
