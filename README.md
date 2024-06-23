@@ -7,7 +7,7 @@ Job application: R19775 Software Development Engineer
 #
 
 ## Description
-this is the command line utility capable to process XML and JSON data formats, related to performs data extraction operations to employee datasets. Written in C++, using libraries like `libxml2-dev` and `nlohmann-json3-dev`, also, Unix shell scripts included for automation. Please note, binary files are not loaded to the repository according to `.gitignore`, and all object files `*.o` are ignored and removed during compilation step.
+This is the command line utility capable to process XML and JSON data formats, related to performs data extraction operations to employee datasets. Written in C++, using libraries like `libxml2-dev` and `nlohmann-json3-dev`, also, Unix shell scripts included for automation. Please note, binary files are not loaded to the repository according to `.gitignore`, and all object files `*.o` are ignored and removed during compilation step.
 
 ## Installation
 ```bash
