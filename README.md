@@ -68,10 +68,11 @@ implementation-test/
     └── test_cases.cpp
 ```
 
-# installed
-```bash
-sudo apt-get install libxml2-dev
-```
 # Reference
 - https://en.cppreference.com/
+- reference manual: `man gcc`
+- reference manual: `man tree`
 - https://chatgpt.com/
+- SOLID principles: Single responsibitlity principle [(SRP)](https://www.freecodecamp.org/news/solid-principles-single-responsibility-principle-explained/)
+- Test standard library: [cassert](https://en.cppreference.com/w/cpp/header/cassert)
+- read XML data from c++ [Microsoft Docs](https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/cpp/language-compilers/read-xml-data-from-file)
