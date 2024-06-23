@@ -1,25 +1,25 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <algorithm>
-#include <libxml/parser.h>
-#include <libxml/tree.h>
-#include "nlohmann/json.hpp"
 #include "../include/employee.h"
 
 // Function to display results
 void displayResults(std::vector<Employee> &employees)
 {
-    std::cout << "Average Salary: " << calculateAverageSalary(employees) << std::endl;
-    Employee highestPaid = findHighestPaidEmployee(employees);
-    std::cout << "Highest Paid Employee: " << highestPaid.name << ", ID: " << highestPaid.id
-              << ", Department: " << highestPaid.department << ", Salary: " << highestPaid.salary << std::endl;
-    sortEmployeesById(employees);
-    std::cout << "Sorted Employees by ID:" << std::endl;
-    for (const auto &emp : employees)
+    if (employees.empty())
     {
-        std::cout << "ID: " << emp.id << ", Name: " << emp.name << ", Department: " << emp.department
-                  << ", Salary: " << emp.salary << std::endl;
+        std::cerr << "No employees to display." << std::endl;
+    }
+    else
+    {
+        std::cout << "Average Salary: " << calculateAverageSalary(employees) << std::endl;
+        Employee highestPaid = findHighestPaidEmployee(employees);
+        std::cout << "Highest Paid Employee: " << highestPaid.name << ", ID: " << highestPaid.id
+                  << ", Department: " << highestPaid.department << ", Salary: " << highestPaid.salary << std::endl;
+        sortEmployeesById(employees);
+        std::cout << "Sorted Employees by ID:" << std::endl;
+        for (const auto &emp : employees)
+        {
+            std::cout << "ID: " << emp.id << ", Name: " << emp.name << ", Department: " << emp.department
+                      << ", Salary: " << emp.salary << std::endl;
+        }
     }
 }
 
@@ -45,7 +45,6 @@ std::vector<Employee> parseJSON(const std::string &filename)
     }
 
     // guard to handle empty file from parser function
-
     json j;
     try
     {
@@ -79,24 +78,35 @@ std::vector<Employee> parseJSON(const std::string &filename)
 }
 
 // Function to parse XML file
-std::vector<Employee> parseXML(const std::string &filename) {
+std::vector<Employee> parseXML(const std::string &filename)
+{
     std::vector<Employee> employees;
     xmlDoc *document = xmlReadFile(filename.c_str(), NULL, 0);
     xmlNode *root = xmlDocGetRootElement(document);
     xmlNode *cur_node = NULL;
 
-    for (cur_node = root->children; cur_node; cur_node = cur_node->next) {
-        if ((cur_node->type == XML_ELEMENT_NODE && xmlStrcmp(cur_node->name, (const xmlChar *)"employee") == 0) || 
-            (cur_node->type == XML_ELEMENT_NODE && xmlStrcmp(cur_node->name, (const xmlChar *)"record") == 0)) {
+    for (cur_node = root->children; cur_node; cur_node = cur_node->next)
+    {
+        if ((cur_node->type == XML_ELEMENT_NODE && xmlStrcmp(cur_node->name, (const xmlChar *)"employee") == 0) ||
+            (cur_node->type == XML_ELEMENT_NODE && xmlStrcmp(cur_node->name, (const xmlChar *)"record") == 0))
+        {
             Employee emp;
-            for (xmlNode *child = cur_node->children; child; child = child->next) {
-                if (xmlStrcmp(child->name, (const xmlChar *)"name") == 0) {
+            for (xmlNode *child = cur_node->children; child; child = child->next)
+            {
+                if (xmlStrcmp(child->name, (const xmlChar *)"name") == 0)
+                {
                     emp.name = (char *)xmlNodeGetContent(child);
-                } else if (xmlStrcmp(child->name, (const xmlChar *)"id") == 0) {
+                }
+                else if (xmlStrcmp(child->name, (const xmlChar *)"id") == 0)
+                {
                     emp.id = std::stoi((char *)xmlNodeGetContent(child));
-                } else if (xmlStrcmp(child->name, (const xmlChar *)"department") == 0) {
+                }
+                else if (xmlStrcmp(child->name, (const xmlChar *)"department") == 0)
+                {
                     emp.department = (char *)xmlNodeGetContent(child);
-                } else if (xmlStrcmp(child->name, (const xmlChar *)"salary") == 0) {
+                }
+                else if (xmlStrcmp(child->name, (const xmlChar *)"salary") == 0)
+                {
                     emp.salary = std::stod((char *)xmlNodeGetContent(child));
                 }
             }
@@ -132,5 +142,3 @@ void sortEmployeesById(std::vector<Employee> &employees)
     std::sort(employees.begin(), employees.end(), [](const Employee &a, const Employee &b)
               { return a.id < b.id; });
 }
-
-

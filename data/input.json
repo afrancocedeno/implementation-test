@@ -1,7 +1,7 @@
 {
   "employees": [
     {
-      "name": "John Doe",
+      "name": "",
       "id": 2,
       "department": "HR",
       "salary": 40000

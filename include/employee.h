@@ -4,6 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
+#include <algorithm>
+#include <cassert>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 #include "nlohmann/json.hpp"
