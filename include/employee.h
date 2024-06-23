@@ -37,6 +37,7 @@ public:
     double getSalary() const { return salary; }
 };
 
+// functions declarations
 std::vector<Employee> parseJSON(const std::string &filename);
 std::vector<Employee> parseXML(const std::string &filename);
 double calculateAverageSalary(const std::vector<Employee> &employees);

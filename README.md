@@ -9,8 +9,6 @@ file update | <commit description>
 file delete | <commit description>
 ```
 
-# compilation
-
 ## Compilation
 ```bash
 g++ -o employee_utility src/*.cpp -I include
@@ -18,8 +16,8 @@ g++ -o employee_utility src/*.cpp -I include
 
 # Running
 ```bash
-./scripts/run.sh /data/input.xml # input data goes inside /data folder
-./scripts/run.sh /data/input.json
+./scripts/run.sh data/input.xml # input data goes inside /data folder
+./scripts/run.sh data/input.json
 ```
 
 > View demo
@@ -59,3 +57,5 @@ implementation-test/
 ```bash
 sudo apt-get install libxml2-dev
 ```
+# Reference
+- https://en.cppreference.com/
